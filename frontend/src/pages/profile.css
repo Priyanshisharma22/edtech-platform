@@ -1,0 +1,340 @@
+/* ================= ROOT ================= */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ================= PAGE WRAPPER ================= */
+.profile-modal {
+  width: 480px;
+  margin: 3rem auto;
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid #f0f0f0;
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-modal h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1f2937;
+}
+
+/* ================= AVATAR ================= */
+.avatar-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #6366f1;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.3);
+}
+
+.avatar-section input[type="file"] {
+  display: block;
+  margin: 1rem auto;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.avatar-section button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  margin: 0.5rem 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+.avatar-section button:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.remove-btn {
+  background: transparent !important;
+  color: #ef4444 !important;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  box-shadow: none !important;
+}
+
+.remove-btn:hover {
+  color: #dc2626 !important;
+}
+
+/* ================= PROFILE ROWS ================= */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.row:hover {
+  background: #f0f4ff;
+}
+
+.row label {
+  font-weight: 700;
+  width: 80px;
+  color: #1f2937;
+  letter-spacing: 0.3px;
+}
+
+.row span {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #6b7280;
+  padding: 0 0.75rem;
+}
+
+.row input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.row button {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #4f46e5;
+}
+
+.row button:hover {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+/* ================= CHANGE PASSWORD ================= */
+.change-password {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.change-password:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ================= LOGOUT ================= */
+.logout {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.logout:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* ================= MODAL BACKDROP ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= MODAL BOX ================= */
+.modal-box {
+  background: white;
+  padding: 2.5rem;
+  width: 380px;
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  border: 1px solid #f0f0f0;
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-box h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.3px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.modal-box input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.modal-box button:first-of-type {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.modal-box button:first-of-type:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.cancel {
+  background: #f3f4f6;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+.cancel:hover {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .profile-modal {
+    width: 92%;
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+
+  .modal-box {
+    width: 90%;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
